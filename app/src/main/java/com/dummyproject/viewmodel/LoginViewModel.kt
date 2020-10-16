@@ -9,14 +9,6 @@ import kotlinx.coroutines.launch
 
 class LoginViewModel(private val repository: AuthRepository) : ViewModel() {
 
- private val _loginResponse : MutableLiveData<Resource<LoginEntity>> = MutableLiveData()
- private val loginResponse : LiveData<Resource<LoginEntity>>
-    get() = _loginResponse
-
-
-    fun login() = viewModelScope.launch {
-//        _loginResponse.value = repository.fetchData()
-    }
 
     fun getLoginData(mobile : String, token : String) = liveData(Dispatchers.IO) {
         emit(Resource.loading(data = null))
