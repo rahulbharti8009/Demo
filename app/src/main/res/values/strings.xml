@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Amigosinpin</string>
+    <string name="app_name">Demo</string>
     <string name="sign_up">SIGN UP</string>
     <string name="enter_here">Enter here...</string>
     <string name="mobile_number">Mobile Number</string>
@@ -22,15 +22,15 @@
     <string name="str_don_t_receive_the_otp_resend_otp">Don\'t receive the OTP ? RESEND OTP</string>
     <string name="paid_call_priority">Paid Calls Priority</string>
     <string name="international_rated">International Rates</string>
-    <string name="last_weak">Last Week</string>
+    <string name="last_weak">Dummy Card</string>
     <string name="asp_market">ASP Market</string>
-    <string name="older">Older</string>
+    <string name="older">Calls History Horizontal</string>
     <string name="money_transfer">Money Transfer</string>
     <string name="add_funds">Add Funds</string>
     <string name="calling_plans">Calling Plans</string>
     <string name="mobile_top_up">Mobile Top-Up</string>
     <string name="recent_call">Recent Call</string>
-    <string name="see_recent_call_s_and_trasnaction_here">See recent calls and transactions here</string>
+    <string name="str_recent_call">Recent call vertical</string>
     <string name="recharge">Recharge</string>
     <string name="call_history">Call History</string>
     <string name="sms_history">SMS History</string>
@@ -38,7 +38,7 @@
     <string name="payment_history">Payment History</string>
     <string name="amount">$ Amount</string>
     <string name="str_add_money">Add Money</string>
-    <string name="add_money_to_amigo_wallet">Add Money to Amigo Wallet</string>
+    <string name="add_money_to_amigo_wallet">Add Money to demo Wallet</string>
     <string name="promo_code">Promo Code?</string>
     <string name="search">Search</string>
     <string name="choose_payment">Choose Payment Method</string>
@@ -49,7 +49,7 @@
     <string name="start_group">Start Group</string>
     <string name="refer_a_friend">Refer a Friend</string>
     <string name="anenean_massa">Anenean massa</string>
-    <string name="amigo">Amigo</string>
+    <string name="amigo">Demo</string>
     <string name="invite">Invite</string>
     <string name="contact_to_top_up_or_enter_manually">Contact to Top-Up or Enter Manually</string>
     <string name="enter_mobile_no">Enter Mobile No</string>
@@ -62,7 +62,7 @@
     <string name="minutes">Minutes</string>
     <string name="wi_fi_calls">Wi-fi Calls</string>
     <string name="provide_excellent_quality_when_you_wi_fi_signal_is_strong_use_this_option_to_save_both_your_cellular_minutes_and_data_plan">Provide excellent quality when your Wi-Fi signal is strong Use this option to save both your cellular minutes and data plan.</string>
-    <string name="reedeem_a_amigo_card">Reedeem a Amigo Card</string>
+    <string name="reedeem_a_amigo_card">Reedeem a  Card</string>
     <string name="share_your_balance">Share Your Balance</string>
     <string name="str_payment">Payment</string>
     <string name="str_help">Help?</string>
@@ -124,5 +124,7 @@
     <string name="data_calls">Data Calls</string>
     <string name="str_TandC"><![CDATA[T&C]]></string>
     <string name="str_please_wait">Please wait</string>
+    <string name="rahul_bharti">Rahul Bharti</string>
+    <string name="_0">0</string>
 
 </resources>

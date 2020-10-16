@@ -1,5 +1,6 @@
 package com.dummyproject.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
@@ -60,11 +61,7 @@ class SignInActivity : BaseActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v?.id){
             R.id.btnVerify ->{
-                if(binding.etNumber.text.toString().trim().isEmpty()){
-                    showToast(this , "Please enter mobile number")
-                    return
-                }
-                getData(binding.etNumber.text.toString().trim())
+               startActivity(Intent(this , OtpActivity::class.java))
             }
             else ->{}}
     }

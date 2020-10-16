@@ -51,46 +51,8 @@
 
 
             <RelativeLayout
-                android:id="@+id/relativeLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="10dp"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-                tools:layout_editor_absoluteX="45dp">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvRecharge"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_radius_medium"
-                    android:backgroundTint="@color/black_4"
-                    android:paddingStart="15dp"
-                    android:paddingTop="5dp"
-                    android:paddingEnd="15dp"
-                    android:paddingBottom="5dp"
-                    android:text="@string/recharge"
-                    android:textColor="@color/white" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvPromoCode"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:background="@drawable/border_radius_medium"
-                    android:backgroundTint="@color/black_4"
-                    android:paddingStart="15dp"
-                    android:paddingTop="5dp"
-                    android:paddingEnd="15dp"
-                    android:paddingBottom="5dp"
-                    android:text="@string/promo_code"
-                    android:textColor="@color/white" />
-            </RelativeLayout>
-
-            <RelativeLayout
                 android:id="@+id/rltCouponPromo"
-                app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
                 android:layout_width="match_parent"
                 android:layout_marginTop="16dp"
                 android:background="@color/color_card_bg"

@@ -20,7 +20,7 @@ class SpalshActivity : BaseActivity() {
         setContentView(R.layout.activity_splash)
 
         GlobalScope.launch(Dispatchers.Main) {
-            delay(2000)
+            delay(3000)
             startActivity(Intent(this@SpalshActivity, SignInActivity::class.java))
             finish()
         }

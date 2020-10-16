@@ -103,6 +103,9 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
 // circle image
     implementation 'com.mikhaellopez:circularimageview:3.2.0'
+    // lottie
+    def lottieVersion = "3.4.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 
 
 }

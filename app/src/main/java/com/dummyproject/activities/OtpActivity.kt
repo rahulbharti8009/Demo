@@ -18,6 +18,7 @@ import com.dummyproject.custom_view.otp.OnOtpCompletionListener
 import com.dummyproject.databinding.ActivityOtpBinding
 import com.dummyproject.utils.BaseActivity
 import com.dummyproject.utils.hideKeyboard
+import com.dummyproject.utils.snackbar
 
 class OtpActivity : BaseActivity() , View.OnClickListener , OnOtpCompletionListener{
 
@@ -74,10 +75,10 @@ class OtpActivity : BaseActivity() , View.OnClickListener , OnOtpCompletionListe
         binding.btnOtpVerify.backgroundTintList = ContextCompat.getColorStateList(this , R.color.red)
 
         if(otp.equals("1234")){
-        Toast.makeText(this, "Otp is success ==>> $otp", Toast.LENGTH_SHORT).show()
+            snackbar(this , "Otp is success ==>> $otp")
         }
         else{
-            Toast.makeText(this, "OTP does not match", Toast.LENGTH_SHORT).show()
+            snackbar(this , "Please enter otp 1234")
         }
     }
 }

@@ -106,14 +106,11 @@ class HomeControllerFragment : Fragment(), View.OnClickListener {
     }
 
     private fun listener() {
-        binding.llytAddFund.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.llytAddFund -> {
-                startActivity(Intent(context, AddMoneyActivity::class.java))
-            }
+
             else -> {
             }
         }

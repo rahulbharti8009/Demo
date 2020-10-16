@@ -27,13 +27,15 @@
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/etMobileNumber"
                 android:layout_width="match_parent"
-                android:hint="0000"
+                android:hint="@string/_0"
+                android:textColor="@color/black"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:background="@null"
                 android:enabled="false"
+                android:textSize="@dimen/_25sdp"
                 android:focusable="false"
                 android:maxLength="10"
                 android:textAlignment="center" />
@@ -106,6 +108,7 @@
                             android:textAppearance="?android:attr/textAppearanceLarge" />
 
                         <TextView
+                            android:visibility="gone"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/digit_two_text"
@@ -131,6 +134,7 @@
                             android:textAppearance="?android:attr/textAppearanceLarge" />
 
                         <TextView
+                            android:visibility="gone"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/digit_three_text"
@@ -166,6 +170,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:visibility="gone"
                             android:text="@string/digit_four_text"
                             android:textAppearance="?android:attr/textAppearanceSmall" />
                     </LinearLayout>
@@ -191,6 +196,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:visibility="gone"
                             android:text="@string/digit_five_text"
                             android:textAppearance="?android:attr/textAppearanceSmall" />
                     </LinearLayout>
@@ -216,6 +222,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:visibility="gone"
                             android:text="@string/digit_six_text"
                             android:textAppearance="?android:attr/textAppearanceSmall" />
                     </LinearLayout>
@@ -250,6 +257,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/digit_seven_text"
+                            android:visibility="gone"
                             android:textAppearance="?android:attr/textAppearanceSmall" />
                     </LinearLayout>
 
@@ -275,6 +283,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/digit_eight_text"
+                            android:visibility="gone"
                             android:textAppearance="?android:attr/textAppearanceSmall" />
                     </LinearLayout>
 
@@ -299,6 +308,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:visibility="gone"
                             android:text="@string/digit_nine_text"
                             android:textAppearance="?android:attr/textAppearanceSmall" />
                     </LinearLayout>
@@ -311,32 +321,19 @@
                     android:layout_height="wrap_content"
                     android:gravity="center">
 
-                    <TextView
+
+                    <androidx.appcompat.widget.AppCompatImageButton
                         android:id="@+id/ok"
                         android:layout_width="@dimen/_60sdp"
                         android:layout_height="@dimen/_60sdp"
-                        android:layout_margin="@dimen/_10sdp"
-                        android:background="@drawable/numeric_button"
-                        android:contentDescription="@string/clear"
-                        android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
-                        android:text="*"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_30sdp"
-                        android:tint="@color/red" />
-
-                    <ImageButton
-                        android:id="@+id/ok_btn"
-                        android:layout_width="@dimen/_60sdp"
-                        android:layout_height="@dimen/_60sdp"
                         android:layout_margin="@dimen/passcode_btn_margin"
-                        android:background="@android:color/transparent"
-                        android:backgroundTint="@color/red"
-                        android:contentDescription="@string/ok"
+                        android:background="@drawable/numeric_button"
+                        android:backgroundTint="@color/white"
+                        android:rotation="180"
                         android:hapticFeedbackEnabled="true"
-                        android:src="@mipmap/icon_back"
-                        android:visibility="gone" />
+                        android:src="@drawable/icon_right_arow"
+                        android:tint="@color/color_coupon_list"
+                        android:visibility="visible" />
 
                     <LinearLayout
                         android:id="@+id/llytZero"
@@ -363,49 +360,22 @@
                             android:textAppearance="?android:attr/textAppearanceSmall" />
                     </LinearLayout>
 
-                    <TextView
+                    <ImageButton
                         android:id="@+id/tvDelete"
                         android:layout_width="@dimen/_60sdp"
                         android:layout_height="@dimen/_60sdp"
-                        android:layout_margin="@dimen/_10sdp"
-                        android:background="@drawable/numeric_button"
-                        android:contentDescription="@string/clear"
-                        android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
-                        android:text="#"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_20sdp"
-                        android:tint="@color/red" />
-
-                    <ImageButton
-                        android:id="@+id/delete_btn"
-                        android:layout_width="@dimen/_60sdp"
-                        android:layout_height="@dimen/_60sdp"
                         android:layout_margin="@dimen/passcode_btn_margin"
-                        android:background="@android:color/transparent"
-                        android:backgroundTint="@color/red"
+                        android:background="@drawable/numeric_button"
+                        android:backgroundTint="@color/white"
                         android:contentDescription="@string/clear"
                         android:hapticFeedbackEnabled="true"
                         android:src="@drawable/icon_close"
                         android:tint="@color/red"
-                        android:visibility="gone" />
+                     />
                 </TableRow>
 
             </TableLayout>
 
-            <!--            <Button-->
-            <!--                android:id="@+id/btnVerify"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_gravity="center_horizontal"-->
-            <!--                android:background="@drawable/border_bg"-->
-            <!--                android:backgroundTint="@color/red"-->
-            <!--                android:padding="@dimen/_5sdp"-->
-            <!--                android:text="@string/proceed"-->
-            <!--                android:textAllCaps="false"-->
-            <!--                android:textColor="@color/white"-->
-            <!--                android:textSize="@dimen/_12sdp" />-->
 
         </RelativeLayout>
 

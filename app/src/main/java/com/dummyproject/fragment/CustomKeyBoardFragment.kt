@@ -92,11 +92,11 @@ class CustomKeyBoardFragment : Fragment(),View.OnClickListener {
         binding.etMobileNumber.setText(typedText)
     }
 
-    fun onOnDeletePressed() {
+    private fun onOnDeletePressed() {
         clearText()
     }
 
-    fun onKeyPressed(value: Int) {
+    private fun onKeyPressed(value: Int) {
         if(  binding.etMobileNumber.text.toString().length != 10)
             appendText(value.toString())
         else {
@@ -105,11 +105,7 @@ class CustomKeyBoardFragment : Fragment(),View.OnClickListener {
     }
 
     private fun onOkPressed() {
-        Toast.makeText(context,
-            binding.etMobileNumber.text.toString() + "\n\n" + typedText,
-            Toast.LENGTH_SHORT
-        ).show()
-
+        snackbar(context!!, "Number is :  $typedText")
     }
 
     override fun onClick(p0: View?) {

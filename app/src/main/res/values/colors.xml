@@ -21,6 +21,8 @@
     <color name="color_inactive_icon">#616161</color>
     <color name="color_coupon_list">#007236</color>
     <color name="color_switch">#607D8B</color>
+    <color name="color_green">#1C2B06</color>
+    <color name="color_sky">#3F51B5</color>
 
 
 <!--  for custom keyboard  -->

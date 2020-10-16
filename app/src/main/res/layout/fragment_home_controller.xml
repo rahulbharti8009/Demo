@@ -13,79 +13,15 @@
             android:orientation="vertical"
             tools:context=".fragment.HomeControllerFragment">
 
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_30sdp"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginBottom="@dimen/_8sdp"
-                android:layout_marginEnd="@dimen/_30sdp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:textSize="@dimen/_8sdp"
-                    android:paddingTop="@dimen/_4sdp"
-                    android:paddingBottom="@dimen/_4sdp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginStart="5dp"
-                    android:background="@drawable/border_radius_little_bit"
-                    android:backgroundTint="@color/color_home_bg"
-                    android:text="@string/call_history" />
-
-                <TextView
-                    android:layout_marginEnd="5dp"
-                    android:textSize="@dimen/_8sdp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingTop="@dimen/_4sdp"
-                    android:paddingBottom="@dimen/_4sdp"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:background="@drawable/border_radius_little_bit"
-                    android:backgroundTint="@color/color_home_bg"
-                    android:text="@string/sms_history" />
-
-                <TextView
-                    android:layout_marginEnd="5dp"
-                    android:textSize="@dimen/_8sdp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:paddingTop="@dimen/_4sdp"
-                    android:paddingBottom="@dimen/_4sdp"
-                    android:background="@drawable/border_radius_little_bit"
-                    android:backgroundTint="@color/color_home_bg"
-                    android:text="@string/topup_history" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:paddingTop="@dimen/_4sdp"
-                    android:paddingBottom="@dimen/_4sdp"
-                    android:textSize="@dimen/_8sdp"
-                    android:background="@drawable/border_radius_little_bit"
-                    android:backgroundTint="@color/color_home_bg"
-                    android:text="@string/payment_history" />
-
-            </LinearLayout>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_200sdp"
                 android:background="@color/color_home_bg"
-                android:paddingStart="@dimen/_70sdp"
-                android:paddingEnd="@dimen/_70sdp"
+                android:text="@string/rahul_bharti"
+                android:gravity="center"
+                android:textSize="@dimen/_30sdp"
+                android:textAlignment="center"
+                android:textColor="@color/color_green"
                 app:srcCompat="@drawable/home_header_icon" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -108,121 +44,6 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:id="@+id/tvASPMarket"
-                    android:layout_width="match_parent"
-                    android:textSize="@dimen/_12sdp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:text="@string/asp_market" />
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                      android:id="@+id/llytAddFund"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="@dimen/_60sdp"
-                            android:paddingStart="@dimen/_5sdp"
-                            android:paddingEnd="@dimen/_5sdp"
-                          android:layout_gravity="center"
-                            android:layout_height="@dimen/_60sdp"
-                            android:src="@drawable/icon_dollar"
-                            app:srcCompat="@string/asp_market" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:gravity="center"
-                            android:singleLine="true"
-                            android:text="@string/add_funds"
-                            android:textSize="@dimen/_10sdp" />
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="@dimen/_60sdp"
-                            android:layout_height="@dimen/_60sdp"
-                            android:paddingStart="@dimen/_5sdp"
-                            android:paddingEnd="@dimen/_5sdp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/icon_calling"
-                            app:srcCompat="@string/asp_market" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:gravity="center"
-                            android:singleLine="true"
-                            android:text="@string/calling_plans"
-                            android:textSize="@dimen/_10sdp" />
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="@dimen/_60sdp"
-                            android:paddingEnd="@dimen/_5sdp"
-                            android:paddingStart="@dimen/_5sdp"
-                            android:layout_gravity="center"
-                            android:layout_height="@dimen/_60sdp"
-                            android:src="@drawable/icon_mobile_top_up"
-                            app:srcCompat="@string/asp_market" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:gravity="center"
-                            android:textSize="@dimen/_10sdp"
-                            android:text="@string/mobile_top_up" />
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="@dimen/_60sdp"
-                            android:layout_height="@dimen/_60sdp"
-                            android:paddingStart="@dimen/_5sdp"
-                            android:paddingEnd="@dimen/_5sdp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/money_transfer"
-                            app:srcCompat="@string/asp_market"
-                            tools:ignore="RtlSymmetry" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:gravity="center"
-                            android:singleLine="true"
-                            android:text="@string/money_transfer"
-                            android:textSize="@dimen/_10sdp" />
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <TextView
                     android:id="@+id/tvOlder"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -241,7 +62,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:text="@string/see_recent_call_s_and_trasnaction_here"
+                    android:text="@string/str_recent_call"
                     android:textSize="@dimen/_12sdp" />
 
                 <androidx.recyclerview.widget.RecyclerView

@@ -4,14 +4,17 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+android:background="@drawable/gradient"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            app:srcCompat="@drawable/header"
-            android:scaleType="fitXY"
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_150sdp"/>
+            android:layout_height="@dimen/_150sdp"
+            app:lottie_fileName="empty_status.json"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -46,20 +49,11 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="sans-serif"
-                    android:text="@string/we_will_send_you_a_confirmation_code_in_this_n_number"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_10sdp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
                     android:text="@string/mobile_number"
                     android:textAlignment="center"
                     android:textColor="@color/black"
