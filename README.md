@@ -17,3 +17,19 @@ So it will be show, You will be able to see lottie animation.
 
 <img src="gifs/5.png" alt="Sponsor Button" width="200"/> 
 
+# Lottie Library
+    def lottieVersion = "3.4.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
+# I have used network call api using retrofit and coroutine using MVVM architecture,
+ Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.7.2'
+
+# Coroutine
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.7'
+    
+   
+
