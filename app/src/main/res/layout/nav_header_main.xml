@@ -1,506 +1,366 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/color_nav"
-    android:layout_height="match_parent">
-
-<LinearLayout
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/_10sdp"
-    android:layout_marginTop="@dimen/_15sdp"
-    android:background="@color/color_nav"
-    android:orientation="vertical">
+    android:background="@color/red">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivBackArrow"
-        android:layout_width="@dimen/_20sdp"
-        android:layout_height="@dimen/_20sdp"
-        android:rotation="180"
-        android:tint="@color/color_card_bg"
-        app:srcCompat="@drawable/icon_right_arow" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@color/red"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBackArrow"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:rotation="180"
+            android:tint="@color/color_card_bg"
+            app:srcCompat="@drawable/icon_right_arow" />
 
 
-    <RelativeLayout
-        android:layout_width="@dimen/_100sdp"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
-        android:layout_height="@dimen/_100sdp">
-
-        <com.mikhaellopez.circularimageview.CircularImageView
-            android:id="@+id/edit_profilepic"
+        <RelativeLayout
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_100sdp"
-            android:layout_centerInParent="true"
-            android:tint="@color/white"
-            android:src="@drawable/person"
-            android:padding="@dimen/_10sdp"
-            app:civ_border_color="@color/colorPrimary"
-            app:civ_border_width="0dp"
-            app:civ_shadow="false"
-            app:civ_shadow_radius="10"
-            tools:ignore="MissingClass" />
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp">
 
-        <ProgressBar
-            android:id="@+id/pBarProfile"
-            android:visibility="gone"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_centerInParent="true" />
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/edit_profilepic"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_centerInParent="true"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/person"
+                android:tint="@color/white"
+                app:civ_border_color="@color/colorPrimary"
+                app:civ_border_width="0dp"
+                app:civ_shadow="false"
+                app:civ_shadow_radius="10"
+                tools:ignore="MissingClass" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/editprofile_choose_image"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:padding="@dimen/_8sdp"
-            android:visibility="visible"
-            android:background="@drawable/circle_border_bg"
-            android:layout_alignParentEnd="true"
-            app:tint="@color/white"
-            android:tint="@color/white"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:src="@drawable/icon_pic" />
-    </RelativeLayout>
+            <ProgressBar
+                android:id="@+id/pBarProfile"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/editprofile_choose_image"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/circle_border_bg"
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/icon_pic"
+                android:tint="@color/white"
+                android:visibility="visible"
+                app:tint="@color/white" />
+        </RelativeLayout>
 
 
-    <RelativeLayout
-        android:id="@+id/rlyProfile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivProfile"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            android:tint="@color/red"
-            app:srcCompat="@drawable/person" />
-
-        <TextView
-            android:layout_toEndOf="@+id/ivProfile"
-            android:layout_toStartOf="@+id/ivProfileAraw"
+        <RelativeLayout
+            android:id="@+id/rlyProfile"
             android:layout_width="match_parent"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:textSize="@dimen/_11sdp"
-            android:maxLines="1"
-            android:layout_height="wrap_content"
-            android:textColor="@color/color_nav_text"
-            android:layout_centerVertical="true"
-            android:text="@string/str_my_profile"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivProfileAraw"
-            android:layout_width="@dimen/_15sdp"
-            android:layout_height="@dimen/_15sdp"
-            android:tint="@color/color_card_bg"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            app:srcCompat="@drawable/icon_right_arow" />
-    </RelativeLayout>
-    <View
-        android:background="@color/color_nav_view"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginBottom="@dimen/_8sdp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:tint="@color/red"
+                app:srcCompat="@drawable/person" />
 
-    <RelativeLayout
-        android:id="@+id/rlyPaidCallingPriority"
-        android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/_5sdp"
-        android:layout_height="wrap_content">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivPaidCallingPriority"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            app:srcCompat="@drawable/icon_paid_priority" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_toStartOf="@+id/ivProfileAraw"
+                android:layout_toEndOf="@+id/ivProfile"
+                android:maxLines="1"
+                android:text="@string/str_my_profile"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/color_nav_text"
+                android:textSize="@dimen/_11sdp" />
 
-        <TextView
-            android:layout_toEndOf="@+id/ivPaidCallingPriority"
-            android:layout_toStartOf="@+id/ivPaidPriorityAraw"
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivProfileAraw"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:tint="@color/color_card_bg"
+                app:srcCompat="@drawable/icon_right_arow" />
+        </RelativeLayout>
+
+        <View
             android:layout_width="match_parent"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/_11sdp"
-            android:maxLines="1"
-            android:textColor="@color/color_nav_text"
-            android:layout_centerVertical="true"
-            android:text="@string/paid_call_priority"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@color/color_nav_view" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivPaidPriorityAraw"
-            android:layout_width="@dimen/_15sdp"
-            android:layout_height="@dimen/_15sdp"
-            android:layout_alignParentEnd="true"
-            android:tint="@color/color_nav_text"
-            android:layout_centerVertical="true"
-            app:srcCompat="@drawable/icon_right_arow" />
-    </RelativeLayout>
-
-    <View
-        android:background="@color/color_nav_view"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginBottom="@dimen/_8sdp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
-
-    <RelativeLayout
-        android:id="@+id/rlyInternation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivInternation"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            app:srcCompat="@drawable/international" />
-
-        <TextView
-            android:layout_toEndOf="@+id/ivInternation"
-            android:layout_toStartOf="@+id/ivInternationArow"
+        <RelativeLayout
+            android:id="@+id/rlyPaidCallingPriority"
             android:layout_width="match_parent"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:textSize="@dimen/_11sdp"
-            android:maxLines="1"
             android:layout_height="wrap_content"
-            android:textColor="@color/color_nav_text"
-            android:layout_centerVertical="true"
-            android:text="@string/international_rated"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:layout_marginTop="@dimen/_5sdp">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivInternationArow"
-            android:layout_width="@dimen/_15sdp"
-            android:layout_height="@dimen/_15sdp"
-            android:tint="@color/color_nav_text"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            app:srcCompat="@drawable/icon_right_arow" />
-    </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPaidCallingPriority"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:tint="@color/white"
+                app:srcCompat="@drawable/icon_paid_priority" />
 
-    <View
-        android:background="@color/color_nav_view"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginBottom="@dimen/_8sdp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_toStartOf="@+id/ivPaidPriorityAraw"
+                android:layout_toEndOf="@+id/ivPaidCallingPriority"
+                android:maxLines="1"
+                android:text="@string/str_dummy_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/color_nav_text"
+                android:textSize="@dimen/_11sdp" />
 
-    <RelativeLayout
-        android:id="@+id/rlyInviteFriend"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivInviteFriend"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            app:srcCompat="@drawable/icon_invite_friend" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPaidPriorityAraw"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:tint="@color/color_nav_text"
+                app:srcCompat="@drawable/icon_right_arow" />
+        </RelativeLayout>
 
-        <TextView
-            android:layout_toEndOf="@+id/ivInviteFriend"
-            android:layout_toStartOf="@+id/ivInviteFriendArow"
+        <View
             android:layout_width="match_parent"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:textSize="@dimen/_11sdp"
-            android:maxLines="1"
-            android:layout_height="wrap_content"
-            android:textColor="@color/color_nav_text"
-            android:layout_centerVertical="true"
-            android:text="@string/invite_friends"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@color/color_nav_view" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivInviteFriendArow"
-            android:layout_width="@dimen/_15sdp"
-            android:layout_height="@dimen/_15sdp"
-            android:tint="@color/color_nav_text"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            app:srcCompat="@drawable/icon_right_arow" />
-    </RelativeLayout>
-
-    <View
-        android:background="@color/color_nav_view"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginBottom="@dimen/_8sdp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
-
-    <RelativeLayout
-        android:id="@+id/rlyNotification"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivNotification"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            app:srcCompat="@drawable/icon_notification" />
-
-        <TextView
-            android:layout_toEndOf="@+id/ivNotification"
-            android:layout_toStartOf="@+id/ivNotificationArow"
+        <RelativeLayout
+            android:id="@+id/rlyInternation"
             android:layout_width="match_parent"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:textSize="@dimen/_11sdp"
-            android:maxLines="1"
-            android:layout_height="wrap_content"
-            android:textColor="@color/color_nav_text"
-            android:layout_centerVertical="true"
-            android:text="@string/notification"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivNotificationArow"
-            android:layout_width="@dimen/_15sdp"
-            android:layout_height="@dimen/_15sdp"
-            android:tint="@color/color_nav_text"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            app:srcCompat="@drawable/icon_right_arow" />
-    </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivInternation"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:tint="@color/white"
+                app:srcCompat="@drawable/international" />
 
-    <View
-        android:background="@color/color_nav_view"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginBottom="@dimen/_8sdp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_toStartOf="@+id/ivInternationArow"
+                android:layout_toEndOf="@+id/ivInternation"
+                android:maxLines="1"
+                android:text="@string/str_dummy_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/color_nav_text"
+                android:textSize="@dimen/_11sdp" />
 
-    <RelativeLayout
-        android:id="@+id/rlyFundingHistory"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivFundingHistory"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            app:srcCompat="@drawable/icon_funding_history" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivInternationArow"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:tint="@color/color_nav_text"
+                app:srcCompat="@drawable/icon_right_arow" />
+        </RelativeLayout>
 
-        <TextView
-            android:layout_toEndOf="@+id/ivFundingHistory"
-            android:layout_toStartOf="@+id/ivFundingHistoryArow"
+        <View
             android:layout_width="match_parent"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:maxLines="1"
-            android:textSize="@dimen/_11sdp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/color_nav_text"
-            android:layout_centerVertical="true"
-            android:text="@string/funding_history"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@color/color_nav_view" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivFundingHistoryArow"
-            android:layout_width="@dimen/_15sdp"
-            android:layout_height="@dimen/_15sdp"
-            android:tint="@color/color_nav_text"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            app:srcCompat="@drawable/icon_right_arow" />
-    </RelativeLayout>
-
-    <View
-        android:background="@color/color_nav_view"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginBottom="@dimen/_8sdp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
-
-    <RelativeLayout
-        android:id="@+id/rlySupport"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivSupport"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            app:srcCompat="@drawable/icon_support" />
-
-        <TextView
-            android:layout_toEndOf="@+id/ivSupport"
-            android:layout_toStartOf="@+id/ivSupportArow"
+        <RelativeLayout
+            android:id="@+id/rlyInviteFriend"
             android:layout_width="match_parent"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:textSize="@dimen/_11sdp"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:textColor="@color/color_nav_text"
-            android:layout_centerVertical="true"
-            android:text="@string/support"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivSupportArow"
-            android:layout_width="@dimen/_15sdp"
-            android:layout_height="@dimen/_15sdp"
-            android:tint="@color/color_nav_text"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            app:srcCompat="@drawable/icon_right_arow" />
-    </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivInviteFriend"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
 
-    <View
-        android:background="@color/color_nav_view"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginBottom="@dimen/_8sdp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+                android:tint="@color/white"
+                app:srcCompat="@drawable/icon_invite_friend" />
 
-    <RelativeLayout
-        android:id="@+id/rlyPrivacy"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivPrivacy"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            app:srcCompat="@drawable/icon_privacy" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_toStartOf="@+id/ivInviteFriendArow"
+                android:layout_toEndOf="@+id/ivInviteFriend"
+                android:maxLines="1"
+                android:text="@string/str_dummy_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/color_nav_text"
+                android:textSize="@dimen/_11sdp" />
 
-        <TextView
-            android:layout_toEndOf="@+id/ivPrivacy"
-            android:layout_toStartOf="@+id/ivPrivacyArow"
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivInviteFriendArow"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:tint="@color/color_nav_text"
+                app:srcCompat="@drawable/icon_right_arow" />
+        </RelativeLayout>
+
+        <View
             android:layout_width="match_parent"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:textSize="@dimen/_11sdp"
-            android:maxLines="1"
-            android:layout_height="wrap_content"
-            android:textColor="@color/color_nav_text"
-            android:layout_centerVertical="true"
-            android:text="@string/privacy"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@color/color_nav_view" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivPrivacyArow"
-            android:layout_width="@dimen/_15sdp"
-            android:layout_height="@dimen/_15sdp"
-            android:tint="@color/color_nav_text"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            app:srcCompat="@drawable/icon_right_arow" />
-    </RelativeLayout>
-
-    <View
-        android:background="@color/color_nav_view"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginBottom="@dimen/_8sdp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
-
-    <RelativeLayout
-        android:id="@+id/rlyContact"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivContact"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            app:srcCompat="@drawable/contact_icon" />
-
-        <TextView
-            android:layout_toEndOf="@+id/ivContact"
-            android:layout_toStartOf="@+id/ivContactArow"
+        <RelativeLayout
+            android:id="@+id/rlyNotification"
             android:layout_width="match_parent"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:textSize="@dimen/_11sdp"
-            android:maxLines="1"
-            android:layout_height="wrap_content"
-            android:textColor="@color/color_nav_text"
-            android:layout_centerVertical="true"
-            android:text="@string/contacts"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivContactArow"
-            android:layout_width="@dimen/_15sdp"
-            android:layout_height="@dimen/_15sdp"
-            android:tint="@color/color_nav_text"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            app:srcCompat="@drawable/icon_right_arow" />
-    </RelativeLayout>
-    <View
-        android:background="@color/color_nav_view"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginBottom="@dimen/_8sdp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivNotification"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:tint="@color/white"
 
-    <RelativeLayout
-        android:id="@+id/rlyCredit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivCredit"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            app:srcCompat="@drawable/icon_credit" />
+                app:srcCompat="@drawable/icon_notification" />
 
-        <TextView
-            android:layout_toEndOf="@+id/ivCredit"
-            android:layout_toStartOf="@+id/ivCreditArow"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_toStartOf="@+id/ivNotificationArow"
+                android:layout_toEndOf="@+id/ivNotification"
+                android:maxLines="1"
+                android:text="@string/str_dummy_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/color_nav_text"
+                android:textSize="@dimen/_11sdp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivNotificationArow"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:tint="@color/color_nav_text"
+                app:srcCompat="@drawable/icon_right_arow" />
+        </RelativeLayout>
+
+        <View
             android:layout_width="match_parent"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:textSize="@dimen/_11sdp"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:textColor="@color/color_nav_text"
-            android:layout_centerVertical="true"
-            android:text="@string/credit"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@color/color_nav_view" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivCreditArow"
-            android:layout_width="@dimen/_15sdp"
-            android:layout_height="@dimen/_15sdp"
-            android:tint="@color/color_nav_text"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            app:srcCompat="@drawable/icon_right_arow" />
-    </RelativeLayout>
-    <View
-        android:background="@color/color_nav_view"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginBottom="@dimen/_8sdp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
-
-    <RelativeLayout
-        android:id="@+id/rlyCouponPromotion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivCouponPromotion"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            app:srcCompat="@drawable/icon_coupon_promotion" />
-
-        <TextView
-            android:layout_toEndOf="@+id/ivCouponPromotion"
-            android:layout_toStartOf="@+id/ivCouponPromotionArow"
+        <RelativeLayout
+            android:id="@+id/rlyFundingHistory"
             android:layout_width="match_parent"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:textSize="@dimen/_11sdp"
-            android:maxLines="1"
-            android:layout_height="wrap_content"
-            android:textColor="@color/color_nav_text"
-            android:layout_centerVertical="true"
-            android:text="@string/coupon_or_promotion_code"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivCouponPromotionArow"
-            android:layout_width="@dimen/_15sdp"
-            android:layout_height="@dimen/_15sdp"
-            android:tint="@color/color_nav_text"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            app:srcCompat="@drawable/icon_right_arow" />
-    </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivFundingHistory"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:tint="@color/white"
 
-</LinearLayout>
+                app:srcCompat="@drawable/icon_funding_history" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_toStartOf="@+id/ivFundingHistoryArow"
+                android:layout_toEndOf="@+id/ivFundingHistory"
+                android:maxLines="1"
+                android:text="@string/str_dummy_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/color_nav_text"
+                android:textSize="@dimen/_11sdp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivFundingHistoryArow"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:tint="@color/color_nav_text"
+                app:srcCompat="@drawable/icon_right_arow" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@color/color_nav_view" />
+
+        <RelativeLayout
+            android:id="@+id/rlySupport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSupport"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+
+                android:tint="@color/white"
+                app:srcCompat="@drawable/icon_support" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_toStartOf="@+id/ivSupportArow"
+                android:layout_toEndOf="@+id/ivSupport"
+                android:maxLines="1"
+                android:text="@string/str_dummy_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/color_nav_text"
+                android:textSize="@dimen/_11sdp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSupportArow"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:tint="@color/color_nav_text"
+                app:srcCompat="@drawable/icon_right_arow" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
 </androidx.core.widget.NestedScrollView>
 

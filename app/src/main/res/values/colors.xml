@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FE0000</color>
-    <color name="colorPrimaryDark">#FE0000</color>
+    <color name="colorPrimary">#1E2B75</color>
+    <color name="colorPrimaryDark">#1E2B75</color>
     <color name="colorAccent">#000000</color>
     <color name="black">#000000</color>
     <color name="black_2">#222222</color>
@@ -14,7 +14,8 @@
     <color name="color_nav_view">#333333</color>
     <color name="color_card_bg">#F9F9F9</color>
     <color name="color_card_bg_promo_code">#EBEBEB</color>
-    <color name="red">#FE0000</color>
+    <color name="red">#080F3C</color>
+    <color name="red_dark">#080F3C</color>
     <color name="color_invite_text">#91B3E4</color>
     <color name="color_home_bg">#EBEBEB</color>
     <color name="color_home_bg_light">#F4F3F3</color>

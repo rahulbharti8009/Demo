@@ -62,7 +62,7 @@ class HomeControllerActivity : BaseActivity(), NavigationView.OnNavigationItemSe
         navigationView!!.setNavigationItemSelectedListener(this)
         drawer!!.useCustomBehavior(Gravity.START)
         drawer!!.useCustomBehavior(Gravity.END)
-        binding.toolbar.setNavigationIcon(R.drawable.icon_setting)
+//        binding.toolbar.setNavigationIcon(R.drawable.icon_setting)
     }
 
     override fun listener() {

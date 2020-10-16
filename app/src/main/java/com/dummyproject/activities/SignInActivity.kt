@@ -46,7 +46,7 @@ class SignInActivity : BaseActivity(), View.OnClickListener {
 //                        Log.e("TAG","Succes : ${it.message}")
                         it.data?.let {
                             it.title?.let {
-                                snackbar(this, it)
+                                snackbar(this, "API Invoked ==> $it")
                             }
                         }
                     }
