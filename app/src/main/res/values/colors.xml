@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FE0000</color>
+    <color name="colorPrimaryDark">#FE0000</color>
+    <color name="colorAccent">#000000</color>
+    <color name="black">#000000</color>
+    <color name="black_2">#222222</color>
+    <color name="black_4">#444444</color>
+    <color name="black_9">#999999</color>
+    <color name="black_gray">#CCCACA</color>
+    <color name="white">#ffffff</color>
+    <color name="color_nav_text">#ECE9E9</color>
+    <color name="color_nav">#222222</color>
+    <color name="color_nav_view">#333333</color>
+    <color name="color_card_bg">#F9F9F9</color>
+    <color name="color_card_bg_promo_code">#EBEBEB</color>
+    <color name="red">#FE0000</color>
+    <color name="color_invite_text">#91B3E4</color>
+    <color name="color_home_bg">#EBEBEB</color>
+    <color name="color_home_bg_light">#F4F3F3</color>
+    <color name="color_inactive_icon">#616161</color>
+    <color name="color_coupon_list">#007236</color>
+    <color name="color_switch">#607D8B</color>
+
+
+<!--  for custom keyboard  -->
+    <color name="nk_color_strike">#2E7D32</color>
+    <color name="nk_color_pressed">#4cc552</color>
+</resources>

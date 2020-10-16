@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    <item>-->
+<!--        <layer-list>-->
+<!--            <item-->
+<!--                android:bottom="@dimen/switch_selector_padding"-->
+<!--                android:left="@dimen/switch_selector_padding"-->
+<!--                android:right="@dimen/switch_selector_padding"-->
+<!--                android:top="@dimen/switch_selector_padding">-->
+<!--                <shape-->
+<!--                    android:dither="true"-->
+<!--                    android:shape="oval"-->
+<!--                    android:useLevel="false"-->
+<!--                    android:visible="true">-->
+<!--                    <gradient-->
+<!--                        android:angle="270"-->
+<!--                        android:endColor="@color/white"-->
+<!--                        android:startColor="@color/white"/>-->
+<!--                    <corners-->
+<!--                        android:radius="@dimen/switch_radius"/>-->
+<!--                    <size-->
+<!--                        android:width="@dimen/_15sdp"-->
+<!--                        android:height="@dimen/_15sdp" />-->
+<!--                </shape>-->
+<!--            </item>-->
+
+<!--        </layer-list>-->
+<!--    </item>-->
+
+    <item android:state_checked="false"
+        android:bottom="@dimen/switch_selector_padding"
+        android:left="@dimen/switch_selector_padding"
+        android:right="@dimen/switch_selector_padding"
+        android:top="@dimen/switch_selector_padding" >
+        <shape android:shape="oval">
+            <gradient
+                android:angle="270"
+                android:endColor="@color/color_switch"
+                android:startColor="@color/color_switch"/>
+            <corners android:radius="@dimen/switch_radius" />
+            <stroke
+                android:width="@dimen/switch_stroke_height"
+                android:color="@android:color/transparent">
+            </stroke>
+            <size
+                android:width="@dimen/_15sdp"
+                android:height="@dimen/_15sdp"  />
+
+        </shape>
+    </item>
+
+    <item android:state_checked="true"
+        android:bottom="@dimen/switch_selector_padding"
+        android:left="@dimen/switch_selector_padding"
+        android:right="@dimen/switch_selector_padding"
+        android:top="@dimen/switch_selector_padding">
+        <shape android:shape="oval">
+            <gradient
+                android:angle="270"
+                android:endColor="@color/white"
+                android:startColor="@color/white"/>
+            <corners android:radius="@dimen/switch_radius" />
+            <stroke
+                android:width="@dimen/switch_stroke_height"
+                android:color="@android:color/transparent">
+            </stroke>
+            <size
+                android:width="@dimen/_15sdp"
+                android:height="@dimen/_15sdp" />
+
+        </shape>
+    </item>
+
+</selector>

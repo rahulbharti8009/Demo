@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dummyproject">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name="com.dummyproject.utils.MyApplication"
+        android:allowBackup="true"
+        android:allowClearUserData="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.dummyproject.activities.MainActivity" android:screenOrientation="portrait"></activity>
+<!--        <activity android:name=".activities.ChooseTopUpActivity" />-->
+        <activity android:name="com.dummyproject.activities.PaidCallPriorityActivity" android:screenOrientation="portrait" />
+        <activity android:name="com.dummyproject.activities.ProfileActivity" android:screenOrientation="portrait" />
+        <activity android:name="com.dummyproject.activities.SignInActivity" android:screenOrientation="portrait" />
+        <activity android:name="com.dummyproject.activities.OtpActivity" android:theme="@style/AppThemeOtp" android:screenOrientation="portrait" />
+        <activity android:name="com.dummyproject.activities.ChoosePayMethodActivity" android:screenOrientation="portrait" />
+        <activity android:name="com.dummyproject.activities.AddMoneyActivity" android:screenOrientation="portrait" />
+        <activity android:name="com.dummyproject.activities.SignUpActivity" android:screenOrientation="portrait" />
+        <activity
+            android:name="com.dummyproject.activities.HomeControllerActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.dummyproject.activities.SpalshActivity"
+            android:screenOrientation="portrait" android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

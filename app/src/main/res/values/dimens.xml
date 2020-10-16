@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--  custom switch ON/OFF  -->
+    <dimen name="switch_track_width">36dp</dimen>
+    <dimen name="switch_track_height">30dp</dimen>
+    <dimen name="switch_radius">50dp</dimen>
+    <dimen name="switch_selector_padding">2dp</dimen>
+    <dimen name="switch_stroke_height">0dp</dimen>
+<!--  custom OTP -->
+    <dimen name="otp_customotp_view_item_size">57dp</dimen>
+    <dimen name="otp_customotp_view_item_radius">2dp</dimen>
+    <dimen name="otp_customotp_view_item_spacing">5dp</dimen>
+    <dimen name="otp_customotp_view_item_line_width">2dp</dimen>
+    <dimen name="otp_customotp_view_cursor_width">2dp</dimen>
+
+<!--  for custom key board  -->
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="passcode_btn">70dp</dimen>
+    <dimen name="passcode_btn_margin">10dp</dimen>
+
+</resources>

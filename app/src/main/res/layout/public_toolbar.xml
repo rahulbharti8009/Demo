@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+<RelativeLayout
+    android:background="@color/red"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="@dimen/_40sdp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBack"
+        android:src="@mipmap/icon_back"
+        android:padding="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:background="@color/red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleToolbar"
+        android:layout_width="wrap_content"
+        android:hint="title"
+        android:textStyle="normal"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivEditProfile"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone"
+        android:padding="@dimen/_2sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@color/red"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"/>
+</RelativeLayout>
+</layout>

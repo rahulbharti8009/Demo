@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.dummyproject.custom_view.AdvanceDrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.AppBarOverlay">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    app:popupTheme="@style/AppTheme">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="70dp">
+
+                            <TextView
+                                android:id="@+id/toolbarName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:text="title"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_12sdp"
+                                android:visibility="gone" />
+
+                            <RelativeLayout
+                                android:id="@+id/rltSearch"
+                                android:layout_width="@dimen/_160sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/border_radius_medium"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingTop="@dimen/_6sdp"
+                                android:paddingBottom="@dimen/_6sdp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/ivSearch"
+                                    android:layout_width="@dimen/_10sdp"
+                                    android:layout_height="@dimen/_10sdp"
+                                    android:layout_centerVertical="true"
+                                    app:srcCompat="@drawable/icon_search" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/etSearch"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:layout_toEndOf="@+id/ivSearch"
+                                    android:text="@string/search"
+                                    android:textColor="@color/color_card_bg_promo_code"
+                                    android:textSize="@dimen/_10sdp" />
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/tvTandC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:text="@string/str_TandC"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_alignParentEnd="true"
+                            android:background="@drawable/base_line_layer_"
+                            android:orientation="horizontal"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_18sdp">
+
+                            <TextView
+                                android:id="@+id/tvEnglish"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:text="@string/english"
+                                android:textColor="@color/white" />
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivArow"
+                                android:layout_width="@dimen/_12sdp"
+                                android:layout_height="@dimen/_12sdp"
+                            android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:backgroundTint="@color/black_4"
+                                android:rotation="90"
+                                android:src="@drawable/icon_right_arow"
+                                android:tint="@color/white" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <!--     container   -->
+            <!--    Tabs    -->
+            <RelativeLayout
+                android:id="@+id/frameContainer"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_alignParentBottom="@+id/appBar"
+                app:layout_constraintBottom_toTopOf="@+id/bottomTabs"
+                app:layout_constraintTop_toBottomOf="@+id/appBar"
+                tools:layout_editor_absoluteX="-29dp">
+
+            </RelativeLayout>
+
+            <!--       multi tabs     -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/bottomTabs"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:background="@color/color_home_bg"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:layout_editor_absoluteX="59dp">
+
+                <RelativeLayout
+                    android:id="@+id/rltMenu"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivMenu"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/circle_white"
+                        android:padding="@dimen/_6sdp"
+                        app:srcCompat="@drawable/menu_icon" />
+
+                    <View
+                        android:id="@+id/vMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/red" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rltPerson"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivPerson"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/circle_white"
+                        android:padding="@dimen/_6sdp"
+                        app:srcCompat="@drawable/person" />
+
+                    <View
+                        android:id="@+id/vPerson"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/red" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rltHome"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivHome"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/circle_white"
+                        android:padding="@dimen/_6sdp"
+                        android:tint="@color/red"
+                        app:srcCompat="@drawable/home_icon" />
+
+                    <View
+                        android:id="@+id/vHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/red" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rltTopUp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivTopUp"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/circle_white"
+                        android:padding="@dimen/_6sdp"
+                        app:srcCompat="@drawable/topup_icon" />
+
+                    <View
+                        android:id="@+id/vTopUp"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/red" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rltMoney"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivMoney"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/circle_white"
+                        android:padding="@dimen/_5sdp"
+                        app:srcCompat="@drawable/money_icon" />
+
+                    <View
+                        android:id="@+id/vMoney"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/red" />
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--  Left Navigation      -->
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/color_nav"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header_main"
+
+            app:itemBackground="@color/color_nav"
+            tools:visibility="gone" />
+        <!--    app:menu="@menu/activity_main_drawer"-->
+
+    </com.dummyproject.custom_view.AdvanceDrawerLayout>
+</layout>
