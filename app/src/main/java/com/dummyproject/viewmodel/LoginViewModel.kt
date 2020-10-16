@@ -10,10 +10,10 @@ import kotlinx.coroutines.launch
 class LoginViewModel(private val repository: AuthRepository) : ViewModel() {
 
 
-    fun getLoginData(mobile : String, token : String) = liveData(Dispatchers.IO) {
+    fun getFetchData() = liveData(Dispatchers.IO) {
         emit(Resource.loading(data = null))
         try {
-            emit(Resource.success(data = repository.getLoginData(mobile, token)))
+            emit(Resource.success(data = repository.getFetchData()))
         } catch (e: Exception) {
             emit(Resource.error(data = null, message = e.message ?: "Error Occurred!"))
         }

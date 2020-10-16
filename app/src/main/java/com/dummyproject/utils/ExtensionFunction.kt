@@ -2,6 +2,7 @@ package com.dummyproject.utils
 
 import android.app.Activity
 import android.content.Context
+import android.net.ConnectivityManager
 import android.util.Log
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
@@ -19,7 +20,7 @@ fun snackbar(context: Context, message: String) {
         Snackbar.make(
             (context as Activity).findViewById(android.R.id.content),
             message,
-            Snackbar.LENGTH_SHORT
+            Snackbar.LENGTH_LONG
         )
     snackbar.show()
 }
@@ -37,4 +38,12 @@ fun hideKeyboard(context: Context) {
 
 fun printLogs(tag: String, message: String) {
     Log.d(tag, message)
+}
+
+
+fun isNetworkAvailable(context: Context): Boolean {
+    val connectivityManager =
+        context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    return connectivityManager.activeNetworkInfo != null && connectivityManager.activeNetworkInfo!!
+        .isConnected
 }

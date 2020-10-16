@@ -2,18 +2,19 @@ package com.dummyproject.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import androidx.activity.viewModels
+import androidx.core.net.ConnectivityManagerCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import com.dummyproject.utils.InjectorUtils
 import com.dummyproject.R
 import com.dummyproject.apis.Status
 import com.dummyproject.databinding.ActivitySignInBinding
-import com.dummyproject.utils.BaseActivity
-import com.dummyproject.utils.showToast
+import com.dummyproject.utils.*
 import com.dummyproject.viewmodel.LoginViewModel
+import okhttp3.internal.wait
 
 class SignInActivity : BaseActivity(), View.OnClickListener {
     lateinit var binding : ActivitySignInBinding
@@ -30,22 +31,33 @@ class SignInActivity : BaseActivity(), View.OnClickListener {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_in)
         listener()
 
+        if(isNetworkAvailable(this))
+          getData()
+        else
+            snackbar(this, "Sorry! No network available.")
+
     }
 
-    private fun getData(mobile : String){
-        viewModel.getLoginData(mobile, "1234").observe(this, Observer {
+    private fun getData(){
+        viewModel.getFetchData().observe(this, Observer {
             it?.let { resource ->
                 when(resource.status){
                     Status.SUCCESS ->{
 //                        Log.e("TAG","Succes : ${it.message}")
+                        it.data?.let {
+                            it.title?.let {
+                                snackbar(this, it)
+                            }
+                        }
                     }
                     Status.ERROR ->{
-//                        Log.e("TAG","Error : ${it.message}")
+                        it?.message.let {
+                        snackbar(this, it!!)
+                        }
 
                     }
                     Status.LOADING ->{
-//                        Log.e("TAG","Loading")
-
+                        Log.e("TAG","Loading")
                     }
                 }
             }

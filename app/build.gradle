@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
-def baseUrl = '\"http://webmobril.org/dev/amigosinpin"'
+def baseUrl = '\"https://jsonplaceholder.typicode.com/"'
 
 
 //def keystorePropertiesFile = rootProject.file("keystore.properties")
@@ -23,7 +23,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.amigosinpin"
+        applicationId "com.demo"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1

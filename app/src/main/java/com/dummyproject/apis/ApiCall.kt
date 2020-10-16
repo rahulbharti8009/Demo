@@ -25,7 +25,6 @@ interface ApiCall {
     @FormUrlEncoded
     @POST(login)
     suspend fun getLogin(
-        @Field("mobile") mobile: String,
         @Field("deviceToken") deviceToken: String): LoginEntity
 
 

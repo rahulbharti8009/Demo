@@ -2,8 +2,11 @@ package com.dummyproject.entity
  class LoginEntity {
      val data: Data? = null
      val message: String? = null
+     val userId: String? = null
+     val title: String? = null
+     val id: String? = null
      val otp: Int? = null
-     val success: Boolean?  = null
+     val completed: Boolean?  = null
  }
 
  class Data {
