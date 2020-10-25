@@ -7,15 +7,16 @@ I've craeted lot of screens in this project like splash, SignIn , otp, Homepage 
 
 # Screens
 
-<img src="gifs/5.png" alt="Sponsor Button" width="200"/>   <img src="gifs/6.png" alt="Sponsor Button"  width="200"/>   <img src="gifs/4.png" alt="Sponsor Button"  width="200"/>
- <img src="gifs/3.png" alt="Sponsor Button"  width="200"/>  <img src="gifs/2.png" alt="Sponsor Button"  width="200"/>  <img src="gifs/1.png" alt="Sponsor Button"  width="200"/>
+<img src="gifs/login.jpeg" alt="Sponsor Button" width="200"/> <img src="gifs/otp.jpeg" alt="Sponsor Button"  width="200"/> <img src="gifs/nav.jpeg" alt="Sponsor Button"  width="200"/> <img src="gifs/home.jpeg" alt="Sponsor Button"  width="200"/> <img src="gifs/person.jpeg" alt="Sponsor Button"  width="200"/> 
+<img src="gifs/custom_keyboard.jpeg" alt="Sponsor Button"  width="200"/>  <img src="gifs/topup.jpeg" alt="Sponsor Button"  width="200"/> <img src="gifs/profile.jpeg" alt="Sponsor Button"  width="200"/> <img src="gifs/edit_profile.jpeg" alt="Sponsor Button"  width="200"/>
+
 
 
 # Lottie Screen
 I've used lottie in the signin screen it will not be appeared on it, Whenever you will be downloading this project then either run on device or emulator,
 So it will be show, You will be able to see lottie animation.
 
-<img src="gifs/5.png" alt="Sponsor Button" width="200"/> 
+<img src="gifs/login.jpeg" alt="Sponsor Button" width="200"/> 
 
 # Lottie Library
     def lottieVersion = "3.4.0"
