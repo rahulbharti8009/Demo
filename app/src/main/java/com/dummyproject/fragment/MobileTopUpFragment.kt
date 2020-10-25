@@ -9,7 +9,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dummyproject.R
 import com.dummyproject.adapter.MobileTopUpAdapter
-import com.dummyproject.databinding.FragmentHomeControllerBinding
 import com.dummyproject.databinding.FragmentMobileTopUpBinding
 
 class MobileTopUpFragment : Fragment() {
@@ -37,7 +36,6 @@ class MobileTopUpFragment : Fragment() {
 
     private fun initialized(){
         //TODO () ====>> (Recent Calls) set dummy content
-
         binding.rvMobileTopUp.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         val contactList: MutableList<String> = mutableListOf()
@@ -45,8 +43,6 @@ class MobileTopUpFragment : Fragment() {
         val contactListAdapter = MobileTopUpAdapter( context!!, contactList)
         binding.rvMobileTopUp.adapter = contactListAdapter
         contactListAdapter.notifyDataSetChanged()
-
-
     }
     companion object {
         var instance : MobileTopUpFragment? = null

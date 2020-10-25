@@ -7,7 +7,6 @@ import androidx.databinding.DataBindingUtil
 import com.dummyproject.R
 import com.dummyproject.databinding.ActivityChoosePayMethodBinding
 import com.dummyproject.utils.BaseActivity
-import kotlinx.android.synthetic.main.public_toolbar.view.*
 
 class ChoosePayMethodActivity : BaseActivity(), View.OnClickListener {
 

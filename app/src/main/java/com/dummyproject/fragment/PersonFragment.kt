@@ -9,7 +9,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dummyproject.R
 import com.dummyproject.adapter.ContactListAdapter
-import com.dummyproject.databinding.FragmentContactBinding
 import com.dummyproject.databinding.FragmentPersonBinding
 
 class PersonFragment : Fragment() {

@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dummyproject.R
 import com.dummyproject.adapter.CouponPromoAdapter
 import com.dummyproject.databinding.FragmentContactBinding
-import com.dummyproject.databinding.FragmentPersonBinding
 import com.dummyproject.utils.RVPagerSnapFancyDecorator
 import com.dummyproject.utils.StartSnapHelper
 

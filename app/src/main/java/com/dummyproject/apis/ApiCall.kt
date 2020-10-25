@@ -5,6 +5,7 @@ import com.dummyproject.entity.LoginEntity
 import com.dummyproject.utils.ApiName.login
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
@@ -24,13 +25,15 @@ interface ApiCall {
 
     @FormUrlEncoded
     @POST(login)
-    suspend fun getLogin(
-        @Field("deviceToken") deviceToken: String): LoginEntity
+    suspend fun getLogin(): LoginEntity
+
+//    @GET("api/users")
+//    suspend fun getListData(@Query("page") pageNumber: Int): PaggingEntity
 
 
 
     companion object {
-//        private const val BASE_URL = "https://jsonplaceholder.typicode.com/"
+        private const val BASE_URL = "https://reqres.in/"
 
         fun create(): ApiCall {
             val logger = HttpLoggingInterceptor().apply {
@@ -55,7 +58,8 @@ interface ApiCall {
                 .build()
 
             return Retrofit.Builder()
-                .baseUrl(BuildConfig.BASEURL)
+//              .baseUrl(BuildConfig.BASEURL)
+                .baseUrl(BASE_URL)
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
