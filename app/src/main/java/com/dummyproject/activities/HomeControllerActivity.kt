@@ -81,7 +81,7 @@ class HomeControllerActivity : BaseActivity(), NavigationView.OnNavigationItemSe
         transaction = fm.beginTransaction()
 
         transaction.apply {
-            replace(R.id.frameContainer, fragment)
+            add(R.id.frameContainer, fragment)
             addToBackStack(fragment.javaClass.simpleName)
 //            addToBackStack(null)
             commit()
@@ -178,7 +178,7 @@ class HomeControllerActivity : BaseActivity(), NavigationView.OnNavigationItemSe
                 home()
             }
             R.id.rltTopUp -> {
-                isUpdateFragment(MobileTopUpFragment(), mobileTopUp)
+                isUpdateFragment(VideoFragment(), mobileTopUp)
                 topUp()
             }
             R.id.rltMoney -> {

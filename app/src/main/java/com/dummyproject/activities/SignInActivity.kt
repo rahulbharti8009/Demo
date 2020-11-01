@@ -41,8 +41,9 @@ class SignInActivity : BaseActivity(), View.OnClickListener {
         initialized()
         listener()
 
-        if(isNetworkAvailable(this))
+        if(isNetworkAvailable(this)){
           getData()
+        }
         else
             snackbar(this, "Sorry! No network available.")
 

@@ -230,8 +230,9 @@
                         android:layout_height="@dimen/_30sdp"
                         android:layout_centerInParent="true"
                         android:background="@drawable/circle_white"
+                        android:tint="@color/black"
                         android:padding="@dimen/_6sdp"
-                        app:srcCompat="@drawable/topup_icon" />
+                        app:srcCompat="@drawable/ic_video" />
 
                     <View
                         android:id="@+id/vTopUp"

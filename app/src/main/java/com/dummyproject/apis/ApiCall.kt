@@ -3,6 +3,10 @@ package com.dummyproject.apis
 import com.dummyproject.BuildConfig
 import com.dummyproject.entity.LoginEntity
 import com.dummyproject.utils.ApiName.login
+import com.dummyproject.utils.Constant
+import com.dummyproject.utils.Constant.Companion.paading
+import com.dummyproject.utils.Constant.Companion.url
+import com.dummyproject.utils.Constant.Companion.vedio
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
@@ -14,7 +18,7 @@ import java.util.concurrent.TimeUnit
 interface ApiCall {
 
     @GET()
-    suspend fun getCountry(@Url string: String ): List<String>
+    suspend fun getCountry(@Url string: String): List<String>
 
     @GET()
     suspend fun getRegion(@Url string: String): List<String>
@@ -31,7 +35,6 @@ interface ApiCall {
 //    suspend fun getListData(@Query("page") pageNumber: Int): PaggingEntity
 
 
-
     companion object {
         private const val BASE_URL = "https://reqres.in/"
 
@@ -40,7 +43,6 @@ interface ApiCall {
                 level = HttpLoggingInterceptor.Level.BASIC
                 level = HttpLoggingInterceptor.Level.BODY
             }
-
 
             val client = OkHttpClient.Builder()
                 .addInterceptor(logger)
@@ -58,8 +60,16 @@ interface ApiCall {
                 .build()
 
             return Retrofit.Builder()
-//              .baseUrl(BuildConfig.BASEURL)
-                .baseUrl(BASE_URL)
+                .baseUrl(
+                    when (Constant.BASEURL) {
+                        url -> BuildConfig.BASEURL
+                        paading -> BuildConfig.BASEURL_pagging
+                        vedio -> BuildConfig.BASEURL_video
+                        else -> {
+                            BuildConfig.BASEURL
+                        }
+                    }
+                )
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()

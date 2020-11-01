@@ -5,9 +5,13 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name="com.dummyproject.utils.MyApplication"
         android:allowBackup="true"
+        android:largeHeap="true"
         android:allowClearUserData="true"
         android:icon="@drawable/ic_android_black_24dp"
         android:label="@string/app_name"
@@ -18,15 +22,15 @@
 <!--        <activity android:name=".activities.ChooseTopUpActivity" />-->
         <activity android:name="com.dummyproject.activities.PaidCallPriorityActivity" android:screenOrientation="portrait" />
         <activity android:name="com.dummyproject.activities.ProfileActivity" android:screenOrientation="portrait" />
-        <activity android:name="com.dummyproject.activities.SignInActivity" android:screenOrientation="portrait" />
+        <activity android:name="com.dummyproject.activities.SignInActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
         <activity android:name="com.dummyproject.activities.OtpActivity" android:theme="@style/AppThemeOtp" android:screenOrientation="portrait" />
         <activity android:name="com.dummyproject.activities.ChoosePayMethodActivity" android:screenOrientation="portrait" />
         <activity android:name="com.dummyproject.activities.AddMoneyActivity" android:screenOrientation="portrait" />
         <activity android:name="com.dummyproject.activities.SignUpActivity" android:screenOrientation="portrait" />
         <activity
-            android:name="com.dummyproject.activities.HomeControllerActivity"
+            android:name="com.dummyproject.activities.SpalshActivity"
             android:screenOrientation="portrait" />
-        <activity android:name="com.dummyproject.activities.SpalshActivity"
+        <activity android:name="com.dummyproject.activities.HomeControllerActivity"
             android:screenOrientation="portrait" android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
