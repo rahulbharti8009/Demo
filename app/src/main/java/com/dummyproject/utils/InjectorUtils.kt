@@ -11,6 +11,4 @@ object InjectorUtils {
         return LoginViewModelFactory(authRepository)
     }
 
-
-
 }

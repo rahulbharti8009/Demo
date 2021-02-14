@@ -219,7 +219,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/rltTopUp"
+                    android:id="@+id/rltVideo"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1">

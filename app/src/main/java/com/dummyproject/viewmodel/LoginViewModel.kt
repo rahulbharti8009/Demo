@@ -16,7 +16,4 @@ class LoginViewModel(private val repository: AuthRepository) : ViewModel() {
             emit(Resource.error(data = null, message = e.message ?: "Error Occurred!"))
         }
     }
-
-
-
 }

@@ -20,9 +20,15 @@ class SpalshActivity : BaseActivity() {
         setContentView(R.layout.activity_splash)
 
         GlobalScope.launch(Dispatchers.Main) {
-            delay(3000)
-            startActivity(Intent(this@SpalshActivity, SignInActivity::class.java))
-            finish()
+            delay(2000)
+            if(preferenceUtil.login){
+                startActivity(Intent(this@SpalshActivity, HomeControllerActivity::class.java))
+                finish()
+            }
+            else{
+                startActivity(Intent(this@SpalshActivity, SignInActivity::class.java))
+                finish()
+            }
         }
     }
 

@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:layout_width="match_parent"
-android:background="@drawable/gradient"
         android:layout_height="match_parent"
+        android:background="@drawable/gradient"
         android:orientation="vertical">
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/animationView"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_150sdp"
-            app:lottie_fileName="empty_status.json"
             app:lottie_autoPlay="true"
-            app:lottie_loop="true"/>
+            app:lottie_fileName="empty_status.json"
+            app:lottie_loop="true" />
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="40dp"
-            android:layout_marginStart="40dp">
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp">
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -33,17 +34,17 @@ android:background="@drawable/gradient"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/str_login"
-                    android:textStyle="bold"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:fontFamily="sans-serif"
                     android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif"
                     android:text="@string/enter_your_mobile_number"
                     android:textAlignment="center"
                     android:textColor="@color/black"
@@ -61,36 +62,36 @@ android:background="@drawable/gradient"
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_marginTop="@dimen/_4sdp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
                     android:background="@drawable/border_txt"
-                    android:paddingTop="@dimen/_5sdp"
-                    android:paddingBottom="@dimen/_5sdp"
                     android:paddingStart="@dimen/_10sdp"
-                    android:paddingEnd="@dimen/_10sdp">
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_5sdp">
 
                     <TextView
                         android:id="@+id/tv"
-                        android:visibility="gone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:gravity="center_vertical"
-                        android:text="@string/_91" />
+                        android:text="@string/_91"
+                        android:visibility="gone" />
 
                     <com.hbb20.CountryCodePicker
                         android:id="@+id/tvCountryCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         app:ccp_countryPreference="US"
                         app:ccp_showNameCode="false"
-                        app:ccp_textSize="14sp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        app:ccp_textSize="14sp" />
 
                     <View
                         android:id="@+id/view"
                         android:layout_width="1dp"
-                        android:layout_centerVertical="true"
                         android:layout_height="25dp"
+                        android:layout_centerVertical="true"
                         android:layout_marginEnd="@dimen/_5sdp"
                         android:layout_toEndOf="@+id/tvCountryCode"
                         android:background="@color/black" />
@@ -101,30 +102,38 @@ android:background="@drawable/gradient"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_toEndOf="@+id/view"
-                        android:inputType="number"
-                        android:singleLine="true"
                         android:background="@null"
-                        android:hint="@string/enter_here" />
+                        android:hint="@string/enter_here"
+                        android:inputType="number"
+                        android:singleLine="true" />
                 </RelativeLayout>
 
                 <Button
                     android:id="@+id/btnVerify"
-                    android:layout_marginTop="@dimen/_30sdp"
-                    android:text="@string/verify_your_number"
-                    android:layout_gravity="center_horizontal"
-                    android:textAllCaps="false"
-                    android:padding="@dimen/_5sdp"
-                    android:backgroundTint="@color/red"
-                    android:textColor="@color/white"
-                    android:background="@drawable/border_bg"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:background="@drawable/border_bg"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/verify_your_number"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+                <ProgressBar
+                    android:id="@+id/ProgressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_8sdp"
                     android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_8sdp"
                     android:text="@string/term_and_condition_amp_privacy_policy"
                     android:textAlignment="center"
                     android:textColor="@color/black_4"

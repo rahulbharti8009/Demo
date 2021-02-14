@@ -46,8 +46,9 @@ class OtpActivity : BaseActivity() , View.OnClickListener , OnOtpCompletionListe
 
     override fun initialized() {
         auth = FirebaseAuth.getInstance()
-//        storedVerificationId = intent.getStringExtra("storedVerificationId")
+        storedVerificationId = intent.getStringExtra("storedVerificationId")
         binding.btnOtpVerify.isEnabled = false
+
         val word: Spannable = SpannableString(resources.getString(R.string.str_don_t_receive_the_otp_resend_otp))
         word.setSpan(ForegroundColorSpan(Color.RED), word.length - 10, word.length, 0)
         binding.tvResendOtp.setText(word, TextView.BufferType.SPANNABLE)
@@ -83,6 +84,7 @@ class OtpActivity : BaseActivity() , View.OnClickListener , OnOtpCompletionListe
         hideKeyboard(this)
         binding.btnOtpVerify.isEnabled = true
         binding.btnOtpVerify.backgroundTintList = ContextCompat.getColorStateList(this , R.color.red)
+//            verifyPhoneNumberWithCode(storedVerificationId, otp!!)
 
         if(otp.equals("123456")){
             snackbar(this , "Otp is success ==>> $otp")
@@ -108,13 +110,14 @@ class OtpActivity : BaseActivity() , View.OnClickListener , OnOtpCompletionListe
                 if (task.isSuccessful) {
                     Log.d(TAG, "signInWithCredential:success")
                     val user = task.result?.user
+                    preferenceUtil.login = true
                     startActivity(Intent(this, HomeControllerActivity::class.java))
 
                 } else {
                     snackbar(this , "Please enter otp 1234")
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
-//                        binding.fieldVerificationCode.error = "Invalid code."
+                        snackbar(applicationContext , "Invalid code.")
                     }
                 }
             }

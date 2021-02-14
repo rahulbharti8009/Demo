@@ -47,3 +47,4 @@ fun isNetworkAvailable(context: Context): Boolean {
     return connectivityManager.activeNetworkInfo != null && connectivityManager.activeNetworkInfo!!
         .isConnected
 }
+

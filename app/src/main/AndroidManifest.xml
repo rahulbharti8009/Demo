@@ -3,10 +3,13 @@
     package="com.dummyproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
 
     <application
         android:name="com.dummyproject.utils.MyApplication"
@@ -28,9 +31,9 @@
         <activity android:name="com.dummyproject.activities.AddMoneyActivity" android:screenOrientation="portrait" />
         <activity android:name="com.dummyproject.activities.SignUpActivity" android:screenOrientation="portrait" />
         <activity
-            android:name="com.dummyproject.activities.SpalshActivity"
+            android:name=".activities.HomeControllerActivity"
             android:screenOrientation="portrait" />
-        <activity android:name="com.dummyproject.activities.HomeControllerActivity"
+        <activity android:name=".activities.SpalshActivity"
             android:screenOrientation="portrait" android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

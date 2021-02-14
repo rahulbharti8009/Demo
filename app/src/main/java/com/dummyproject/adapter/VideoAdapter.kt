@@ -32,8 +32,10 @@ class VideoAdapter(var context: Context, var mVedioList: MutableList<Video>) :
 
     class VideoItem(itemView: View, var context: Context) : RecyclerView.ViewHolder(itemView),
         View.OnClickListener {
+
         override fun onClick(v: View?) {
             when (v?.id) {
+
                 else -> {
                 }
             }
@@ -42,6 +44,7 @@ class VideoAdapter(var context: Context, var mVedioList: MutableList<Video>) :
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         Log.d("TAG", "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/${mVedioList[position].thumb}")
+        Log.d("TAG", mVedioList[position].sources[0])
         Glide.with(context)
             .load("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/${mVedioList[position].thumb}")
             .into(holder.itemView.ivThumb)

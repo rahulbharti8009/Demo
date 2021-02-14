@@ -22,8 +22,10 @@ import com.dummyproject.utils.BaseActivity
 import com.dummyproject.utils.Constant.Companion.contact
 import com.dummyproject.utils.Constant.Companion.customKeyboard
 import com.dummyproject.utils.Constant.Companion.home
-import com.dummyproject.utils.Constant.Companion.mobileTopUp
 import com.dummyproject.utils.Constant.Companion.person
+import com.dummyproject.utils.Constant.Companion.videoTab
+import com.dummyproject.utils.Permission.checkFolder
+import com.dummyproject.utils.Permission.checkStoragePermission
 import com.google.android.material.navigation.NavigationView
 import java.lang.Exception
 
@@ -34,7 +36,7 @@ class HomeControllerActivity : BaseActivity(), NavigationView.OnNavigationItemSe
     private lateinit var transaction: FragmentTransaction
     private var drawer: AdvanceDrawerLayout? = null
     private var navigationView: NavigationView? = null
-    private  var backStack: MutableList<String> = mutableListOf()
+    private var backStack: MutableList<String> = mutableListOf()
 
     lateinit var binding: ActivityHomeControllerBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,30 +62,32 @@ class HomeControllerActivity : BaseActivity(), NavigationView.OnNavigationItemSe
         toggle.syncState()
         navigationView = binding.navView
         navigationView!!.setNavigationItemSelectedListener(this)
-        drawer!!.useCustomBehavior(Gravity.START)
-        drawer!!.useCustomBehavior(Gravity.END)
+//        drawer!!.useCustomBehavior(Gravity.START)
+//        drawer!!.useCustomBehavior(Gravity.END)
 //        binding.toolbar.setNavigationIcon(R.drawable.icon_setting)
     }
 
     override fun listener() {
-        navigationView?.getHeaderView(0)!!.findViewById<RelativeLayout>(R.id.rlyProfile)?.setOnClickListener(this)
-        navigationView?.getHeaderView(0)!!.findViewById<AppCompatImageView>(R.id.ivBackArrow)?.setOnClickListener(this)
-        navigationView?.getHeaderView(0)!!.findViewById<RelativeLayout>(R.id.rlyPaidCallingPriority)?.setOnClickListener(this)
+        navigationView?.getHeaderView(0)!!.findViewById<RelativeLayout>(R.id.rlyProfile)
+            ?.setOnClickListener(this)
+        navigationView?.getHeaderView(0)!!.findViewById<AppCompatImageView>(R.id.ivBackArrow)
+            ?.setOnClickListener(this)
+        navigationView?.getHeaderView(0)!!.findViewById<RelativeLayout>(R.id.rlyPaidCallingPriority)
+            ?.setOnClickListener(this)
         binding.rltMenu.setOnClickListener(this)
         binding.rltPerson.setOnClickListener(this)
         binding.rltHome.setOnClickListener(this)
-        binding.rltTopUp.setOnClickListener(this)
+        binding.rltVideo.setOnClickListener(this)
         binding.rltMoney.setOnClickListener(this)
     }
 
-     private fun isUpdateFragment(fragment: Fragment, title: String) {
+    private fun isUpdateFragment(fragment: Fragment, title: String) {
         fm = supportFragmentManager
         transaction = fm.beginTransaction()
 
         transaction.apply {
-            add(R.id.frameContainer, fragment)
+            replace(R.id.frameContainer, fragment)
             addToBackStack(fragment.javaClass.simpleName)
-//            addToBackStack(null)
             commit()
         }
         binding.toolbarName.text = title
@@ -138,8 +142,8 @@ class HomeControllerActivity : BaseActivity(), NavigationView.OnNavigationItemSe
             home -> {
                 home()
             }
-            mobileTopUp -> {
-                topUp()
+            videoTab -> {
+                video()
             }
             contact -> {
                 money()
@@ -148,13 +152,14 @@ class HomeControllerActivity : BaseActivity(), NavigationView.OnNavigationItemSe
     }
 
 
-   fun mobileTop(){
-      isUpdateFragment(ChooseTopUpFragment(), mobileTopUp)
-      topUp2()
-  }
+    fun mobileTop() {
+        isUpdateFragment(ChooseTopUpFragment(), videoTab)
+        topUp2()
+    }
+
     override fun onClick(p0: View?) {
         when (p0?.id) {
-            R.id.ivBackArrow ->{
+            R.id.ivBackArrow -> {
                 drawer!!.closeDrawer(GravityCompat.START)
             }
             R.id.rlyProfile -> {
@@ -177,9 +182,12 @@ class HomeControllerActivity : BaseActivity(), NavigationView.OnNavigationItemSe
                 isUpdateFragment(HomeControllerFragment(), home)
                 home()
             }
-            R.id.rltTopUp -> {
-                isUpdateFragment(VideoFragment(), mobileTopUp)
-                topUp()
+            R.id.rltVideo -> {
+                if (checkStoragePermission(this)) {
+                    checkFolder(this)
+                    isUpdateFragment(VideoFragment.newInstance(), videoTab)
+                    video()
+                }
             }
             R.id.rltMoney -> {
                 isUpdateFragment(ContactFragment(), contact)
@@ -320,7 +328,7 @@ class HomeControllerActivity : BaseActivity(), NavigationView.OnNavigationItemSe
 
     }
 
-    private fun topUp() {
+    private fun video() {
         binding.rltSearch.visibility = View.GONE
         binding.toolbarName.visibility = View.VISIBLE
 
@@ -356,7 +364,6 @@ class HomeControllerActivity : BaseActivity(), NavigationView.OnNavigationItemSe
 
         binding.tvTandC.visibility = View.VISIBLE
     }
-
 
 
     private fun money() {

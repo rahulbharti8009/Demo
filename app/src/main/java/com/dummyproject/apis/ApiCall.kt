@@ -7,7 +7,9 @@ import com.dummyproject.utils.Constant
 import com.dummyproject.utils.Constant.Companion.paading
 import com.dummyproject.utils.Constant.Companion.url
 import com.dummyproject.utils.Constant.Companion.vedio
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -49,27 +51,18 @@ interface ApiCall {
                 .connectTimeout(30, TimeUnit.SECONDS)
                 .readTimeout(50, TimeUnit.SECONDS)
                 .writeTimeout(60, TimeUnit.SECONDS)
-//                .addInterceptor(object  : Interceptor {
-//                    override fun intercept(chain: Interceptor.Chain): okhttp3.Response {
-//                        val requestBuilder: Request.Builder = chain.request().newBuilder()
-////                        requestBuilder.header("Authorization", "serverKey")
-////                        requestBuilder.header("Content-Type", "application/json")
-//                        return chain.proceed(requestBuilder.build())
-//                    }
-//                })
+                .addInterceptor(object  : Interceptor {
+                    override fun intercept(chain: Interceptor.Chain): okhttp3.Response {
+                        val requestBuilder: Request.Builder = chain.request().newBuilder()
+//                        requestBuilder.header("Authorization", "serverKey")
+                        requestBuilder.header("Content-Type", "application/json")
+                        return chain.proceed(requestBuilder.build())
+                    }
+                })
                 .build()
 
             return Retrofit.Builder()
-                .baseUrl(
-                    when (Constant.BASEURL) {
-                        url -> BuildConfig.BASEURL
-                        paading -> BuildConfig.BASEURL_pagging
-                        vedio -> BuildConfig.BASEURL_video
-                        else -> {
-                            BuildConfig.BASEURL
-                        }
-                    }
-                )
+                .baseUrl(BuildConfig.BASEURL)
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()

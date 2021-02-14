@@ -6,7 +6,7 @@ class Constant {
         const val PREFRENCE_NAME = "PREFRENCE_NAME"
         const val person = "Person"
         const val home = "Home"
-        const val mobileTopUp = "Mobile Top-Up"
+        const val videoTab = "video"
         const val contact = "Contact"
         const val customKeyboard = "menu"
 

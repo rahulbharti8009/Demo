@@ -1,108 +1,34 @@
 {
   "project_info": {
-    "project_number": "539336915338",
-    "firebase_url": "https://hifriend-1555152105274.firebaseio.com",
-    "project_id": "hifriend-1555152105274",
-    "storage_bucket": "hifriend-1555152105274.appspot.com"
+    "project_number": "1027856542803",
+    "firebase_url": "https://coronavirus-da412.firebaseio.com",
+    "project_id": "coronavirus-da412",
+    "storage_bucket": "coronavirus-da412.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:539336915338:android:c0345cdb1dd1e3d3",
-        "android_client_info": {
-          "package_name": "com.abtesting"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "539336915338-kqrlnfoe4auivjb9uc4ti90a3vg9s51r.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAw2V91uW3wrArDfX_XngDDrv0WnrDCCk8"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "539336915338-kqrlnfoe4auivjb9uc4ti90a3vg9s51r.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:539336915338:android:c5047e0bb4df684fde7073",
+        "mobilesdk_app_id": "1:1027856542803:android:892fd37dc1892504082aa6",
         "android_client_info": {
           "package_name": "com.dummyproject"
         }
       },
       "oauth_client": [
         {
-          "client_id": "539336915338-kqrlnfoe4auivjb9uc4ti90a3vg9s51r.apps.googleusercontent.com",
+          "client_id": "1027856542803-l984d6mvq9lt38ht8mli1fj8d9ovdq2q.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAw2V91uW3wrArDfX_XngDDrv0WnrDCCk8"
+          "current_key": "AIzaSyACOVuCp3VcdQUVTa0J9GYmVdxC_5tOerw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "539336915338-kqrlnfoe4auivjb9uc4ti90a3vg9s51r.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:539336915338:android:2be6d913f699bfcd",
-        "android_client_info": {
-          "package_name": "com.hifriend.hifriend"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "539336915338-rm9pf517fkpcg6i58l1j7jto1ujvqtmt.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.hifriend.hifriend",
-            "certificate_hash": "44705c65717163c8a00e94eafcf80d1464f9dbc8"
-          }
-        },
-        {
-          "client_id": "539336915338-r48b58a6672pja22mb9jr9ah99ccddqt.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.hifriend.hifriend",
-            "certificate_hash": "bcdc52b38720256359adbfe05d307132b7fdee54"
-          }
-        },
-        {
-          "client_id": "539336915338-kqrlnfoe4auivjb9uc4ti90a3vg9s51r.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAw2V91uW3wrArDfX_XngDDrv0WnrDCCk8"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "539336915338-kqrlnfoe4auivjb9uc4ti90a3vg9s51r.apps.googleusercontent.com",
+              "client_id": "1027856542803-l984d6mvq9lt38ht8mli1fj8d9ovdq2q.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

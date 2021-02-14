@@ -7,7 +7,7 @@ import android.util.Log
 import com.dummyproject.utils.Constant
 
 class SharedPreferenceUtil
-    private constructor(val context: Context) {
+private constructor(val context: Context) {
     val TAG = SharedPreferenceUtil::class.java.simpleName
 
     private val sharedPreferences: SharedPreferences =
@@ -17,7 +17,7 @@ class SharedPreferenceUtil
     companion object {
         @SuppressLint("StaticFieldLeak")
         private var instance: SharedPreferenceUtil? = null
-        fun getInstance(ctx: Context) : SharedPreferenceUtil {
+            fun getInstance(ctx: Context): SharedPreferenceUtil {
             if (instance == null) {
                 instance = SharedPreferenceUtil(ctx)
             }
