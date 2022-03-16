@@ -19,7 +19,7 @@ abstract class BaseActivity  : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        preferenceUtil =  SharedPreferenceUtil.Companion.getInstance(this)
+        preferenceUtil =  SharedPreferenceUtil.getInstance(this)
     }
 
 

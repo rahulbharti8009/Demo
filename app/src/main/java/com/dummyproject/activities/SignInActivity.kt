@@ -2,6 +2,7 @@ package com.dummyproject.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.speech.RecognizerIntent
 import android.util.Log
 import android.view.View
 import android.view.WindowManager
@@ -11,16 +12,33 @@ import androidx.lifecycle.Observer
 import com.dummyproject.R
 import com.dummyproject.apis.Status
 import com.dummyproject.databinding.ActivitySignInBinding
-import com.dummyproject.utils.BaseActivity
-import com.dummyproject.utils.InjectorUtils
-import com.dummyproject.utils.isNetworkAvailable
-import com.dummyproject.utils.snackbar
+import com.dummyproject.entity.FileBitmapModel
+import com.dummyproject.utils.*
 import com.dummyproject.viewmodel.LoginViewModel
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
+import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import org.json.JSONObject
 import java.util.concurrent.TimeUnit
+import okhttp3.MultipartBody
+
+import okhttp3.RequestBody
+import retrofit2.http.Part
+import java.io.FileInputStream
+import android.app.PictureInPictureParams
+import android.graphics.Point
+import android.os.Build
+
+import android.util.Rational
+
+import android.view.Display
+
+
+
+
 
 class SignInActivity : BaseActivity(), View.OnClickListener {
     lateinit var binding: ActivitySignInBinding
@@ -43,20 +61,22 @@ class SignInActivity : BaseActivity(), View.OnClickListener {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_in)
         initialized()
         listener()
-        getData()
+//        getData()
 
+
+//        if (Permission.isCameraPermission(this)) {
+//            ImageUtil.takePhotoFromCamera(this)
+//        }
     }
 
     private fun getData() {
-        viewModel.getFetchData().observe(this, Observer {
+
+        viewModel.getFetchData().observe(this, {
             it?.let { resource ->
                 when (resource.status) {
                     Status.SUCCESS -> {
                         it.data?.let {
-                            Log.e("TAG","Succes : ${it.title}")
-                            it.title?.let {
-                                snackbar(this, "API Invoked ==> $it")
-                            }
+
                         }
                     }
                     Status.ERROR -> {
@@ -71,6 +91,57 @@ class SignInActivity : BaseActivity(), View.OnClickListener {
                 }
             }
         })
+    }
+
+    private fun getSavePicData(pic:MultipartBody.Part) {
+        viewModel.getSavePic(pic).observe(this, {
+            it?.let { resource ->
+                when (resource.status) {
+                    Status.SUCCESS -> {
+                        it.data?.let {
+                            snackbar(this, it.status!!)
+                        }
+                    }
+                    Status.ERROR -> {
+                            snackbar(this, "it.message!!")
+                    }
+                    Status.LOADING -> {
+                        Log.e("TAG", "Loading")
+                    }
+                }
+            }
+        })
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (data != null) {
+            when (requestCode) {
+                Constant.REQ_CODE_SPEECH_INPUT -> {
+                    if (isNotNull(data) && resultCode == RESULT_OK) {
+                        val result = data
+                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
+                        if (result != null && result.size > 0) {
+
+                        }
+                    }
+                }
+                Permission.CAMERA -> {
+                    val fileBitmapModel: FileBitmapModel =
+                        ImageUtil.getFileBitmapOfCameraResponse(data, this)
+                    if (isNotNull(fileBitmapModel)) {
+                        val entity: FileBitmapModel = ImageUtil.getResizedFileBitmapModel(fileBitmapModel)
+                        if (isNotNull(entity)) {
+                            val requestFile: RequestBody = RequestBody.create("multipart/form-data".toMediaTypeOrNull(), entity.file)
+                            val body: MultipartBody.Part =    MultipartBody.Part.createFormData("inputfile", entity.file.getName(), requestFile)
+                            getSavePicData(body)
+                        }
+                    }
+                }
+                else -> {
+                }
+            }
+        }
     }
 
     fun isOTPScreen(storedVerificationId: String) {
@@ -114,6 +185,8 @@ class SignInActivity : BaseActivity(), View.OnClickListener {
 
     override fun listener() {
         binding.btnVerify.setOnClickListener(this)
+        binding.button.setOnClickListener(this)
+
     }
 
     override fun onClick(v: View?) {
@@ -125,6 +198,18 @@ class SignInActivity : BaseActivity(), View.OnClickListener {
 //                } else
 //                    snackbar(this, "Sorry! No network available.")
                 isOTPScreen(storedVerificationId!!)
+            }
+            R.id.button -> {
+                val width = window.decorView.width * 2
+                val height = window.decorView.height
+                val ratio = Rational(width, height)
+                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    var  pip_Builder =   PictureInPictureParams.Builder()
+                    pip_Builder.setAspectRatio(ratio)
+//                    .setActions(getPIPActions(getCurrentVideo())).build();
+                    enterPictureInPictureMode(pip_Builder.build())
+                } else { }
+
             }
             else -> { }
         }

@@ -1,9 +1,12 @@
 package com.dummyproject.utils
 
 import android.app.Activity
+import android.app.PictureInPictureParams
 import android.content.Context
 import android.net.ConnectivityManager
+import android.os.Build
 import android.util.Log
+import android.util.Rational
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
@@ -14,6 +17,7 @@ fun showToast(context: Context, str: String){
     Toast.makeText(context, str, Toast.LENGTH_LONG).show()
 }
 
+fun isNotNull(obj: Any?) = obj != null
 
 fun snackbar(context: Context, message: String) {
     val snackbar =
@@ -47,4 +51,6 @@ fun isNetworkAvailable(context: Context): Boolean {
     return connectivityManager.activeNetworkInfo != null && connectivityManager.activeNetworkInfo!!
         .isConnected
 }
+
+
 

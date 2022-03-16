@@ -7,6 +7,7 @@ class Constant {
         const val person = "Person"
         const val home = "Home"
         const val videoTab = "video"
+        var REQ_CODE_SPEECH_INPUT = 100
         const val contact = "Contact"
         const val customKeyboard = "menu"
 

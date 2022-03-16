@@ -4,5 +4,4 @@ package com.dummyproject.apis
      SUCCESS,
      ERROR,
      LOADING
-
  }

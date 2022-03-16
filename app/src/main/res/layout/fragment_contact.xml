@@ -61,9 +61,9 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvCouponPromo"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
-                    android:layout_height="wrap_content"
                     android:visibility="visible"
                     tools:itemCount="1"
                     tools:layout_editor_absoluteX="0dp"
