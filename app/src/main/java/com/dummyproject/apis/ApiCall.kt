@@ -32,12 +32,11 @@ import java.security.KeyStore
 import java.security.SecureRandom
 import java.util.*
 import javax.net.ssl.*
+import kotlin.collections.ArrayList
 
 
 interface ApiCall {
 
-    @GET()
-    suspend fun getCountry(@Url string: String): List<String>
 
     @GET()
     suspend fun getRegion(@Url string: String): List<String>
@@ -45,20 +44,15 @@ interface ApiCall {
     @GET("todos/1")
     suspend fun getData(): LoginEntity
 
-    @POST("login")
-    suspend fun getData(@Body str : String): LoginEntity
-
-
-    @FormUrlEncoded
-    @POST(login)
-    suspend fun getLogin(): LoginEntity
+    @GET("todos")
+    suspend fun getDataList(): ArrayList<LoginEntity>
 
 //    @GET("api/users")
 //    suspend fun getListData(@Query("page") pageNumber: Int): PaggingEntity
 
 
     @Multipart
-    @POST("imageupload")
+    @POST("https://ataljalapi.cloud.kreatetechnologies.com/api/upload/imageupload")
     suspend  fun updateProfile(
         @Part image: MultipartBody.Part,
     ): UploadPicEntity
@@ -71,26 +65,6 @@ interface ApiCall {
                 level = HttpLoggingInterceptor.Level.BASIC
                 level = HttpLoggingInterceptor.Level.BODY
             }
-
-//          var  keyStore = readKeyStore()
-//          var  keyStore = readKeyStore()
-//
-//            var trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-//            trustManagerFactory.init(keyStore)
-//            val trustManagers: Array<TrustManager> = trustManagerFactory.trustManagers
-//            check(!(trustManagers.size != 1 || trustManagers[0] !is X509TrustManager)) {
-//                "Unexpected default trust managers:" + Arrays.toString(
-//                    trustManagers
-//                )
-//            }
-//            val trustManager = trustManagers[0] as X509TrustManager
-//            var sslContext = SSLContext.getInstance("SSL");
-//            sslContext.init(null, arrayOf(trustManager), null);
-//            val sslSocketFactory = sslContext.socketFactory
-
-//            var keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
-//            keyManagerFactory.init(keyStore, "keystore_pass".toCharArray());
-//            sslContext.init(keyManagerFactory.getKeyManagers(),arrayOf(trustManager),  SecureRandom());
 
             val client = OkHttpClient.Builder()
                 .addInterceptor(logger)
@@ -111,8 +85,8 @@ interface ApiCall {
 
 
             return Retrofit.Builder()
-//                .baseUrl(BuildConfig.BASEURL)
-                .baseUrl("https://ataljalapi.cloud.kreatetechnologies.com/api/upload/")
+
+                .baseUrl(BuildConfig.BASEURL)
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()

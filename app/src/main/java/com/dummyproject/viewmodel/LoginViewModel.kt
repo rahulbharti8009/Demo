@@ -17,6 +17,15 @@ class LoginViewModel(private val repository: AuthRepository) : ViewModel() {
         }
     }
 
+    fun getFetchDataList() = liveData(Dispatchers.IO) {
+        emit(Resource.loading(data = null))
+        try {
+            emit(Resource.success(data = repository.getFetchDataList()))
+        } catch (e: Exception) {
+            emit(Resource.error(data = null, message = e.message ?: "Error Occurred!"))
+        }
+    }
+
     fun getSavePic(pic: MultipartBody.Part) = liveData(Dispatchers.IO) {
         emit(Resource.loading(data = null))
         try {
@@ -26,13 +35,4 @@ class LoginViewModel(private val repository: AuthRepository) : ViewModel() {
         }
     }
 
-
-    fun getFetchData(str : String) = liveData(Dispatchers.IO) {
-        emit(Resource.loading(data = null))
-        try {
-            emit(Resource.success(data = repository.getFetchData(str)))
-        } catch (e: Exception) {
-            emit(Resource.error(data = null, message = e.message ?: "Error Occurred!"))
-        }
-    }
 }

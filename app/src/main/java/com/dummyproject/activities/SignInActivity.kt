@@ -61,29 +61,22 @@ class SignInActivity : BaseActivity(), View.OnClickListener {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_in)
         initialized()
         listener()
-//        getData()
-
-
-//        if (Permission.isCameraPermission(this)) {
-//            ImageUtil.takePhotoFromCamera(this)
-//        }
     }
 
     private fun getData() {
-
         viewModel.getFetchData().observe(this, {
             it?.let { resource ->
                 when (resource.status) {
                     Status.SUCCESS -> {
                         it.data?.let {
-
+                            snackbar(this, it.title!!)
+                            isOTPScreen(storedVerificationId!!)
                         }
                     }
                     Status.ERROR -> {
                         it?.message.let {
                             snackbar(this, it!!)
                         }
-
                     }
                     Status.LOADING -> {
                         Log.e("TAG", "Loading")
@@ -186,18 +179,19 @@ class SignInActivity : BaseActivity(), View.OnClickListener {
     override fun listener() {
         binding.btnVerify.setOnClickListener(this)
         binding.button.setOnClickListener(this)
+        binding.image.setOnClickListener(this)
 
     }
 
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btnVerify -> {
-                binding.ProgressBar.visibility = View.VISIBLE
-//                if (isNetworkAvailable(this)) {
-//                    startPhoneNumberVerification("+91${binding.etNumber.text.toString()}")
-//                } else
-//                    snackbar(this, "Sorry! No network available.")
-                isOTPScreen(storedVerificationId!!)
+                getData()
+            }
+            R.id.image ->{
+                if (Permission.isCameraPermission(this)) {
+            ImageUtil.takePhotoFromCamera(this)
+                }
             }
             R.id.button -> {
                 val width = window.decorView.width * 2
